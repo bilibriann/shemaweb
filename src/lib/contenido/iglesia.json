@@ -1,0 +1,34 @@
+{
+  "vision": "Ser una iglesia que transforma vidas a través del mensaje del Evangelio, impactando Santiago y extendiéndose al mundo.",
+  "mision": "Amar a Dios con todo nuestro ser, hacer discípulos genuinos de Jesucristo y servir a nuestra comunidad con amor y excelencia.",
+  "historia": "La Iglesia SHEMA nació con el propósito de proclamar la Palabra de Dios con claridad y profundidad. Nuestro nombre viene del hebreo שְׁמַע — «Escucha» — el comienzo del mandamiento más importante: «Escucha, Israel: el Señor nuestro Dios, el Señor es uno» (Deuteronomio 6:4).",
+  "valores": [
+    {
+      "titulo": "Fe Bíblica",
+      "descripcion": "Fundamentamos todo en la Palabra de Dios como única regla de fe y práctica."
+    },
+    {
+      "titulo": "Adoración",
+      "descripcion": "Buscamos encuentros genuinos con Dios, en espíritu y en verdad."
+    },
+    {
+      "titulo": "Comunidad",
+      "descripcion": "Somos una familia que se cuida, se apoya y crece junta en la fe."
+    },
+    {
+      "titulo": "Discipulado",
+      "descripcion": "Nos comprometemos a crecer continuamente en el conocimiento y la obediencia a Cristo."
+    },
+    {
+      "titulo": "Servicio",
+      "descripcion": "Expresamos el amor de Dios sirviendo a los demás dentro y fuera de nuestra iglesia."
+    }
+  ],
+  "pastores": [
+    {
+      "nombre": "Pablo Freimuth",
+      "cargo": "Pastor Principal",
+      "descripcion": "informacion del pastor."
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+import type { Metadata } from 'next';
+import { FileText, Clock } from 'lucide-react';
+import { ContenedorSeccion } from '@/componentes/ui/ContenedorSeccion';
+import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
+
+export const metadata: Metadata = {
+  title: 'Política de Privacidad',
+  description: `Política de privacidad de ${CONFIGURACION_SITIO.nombre}.`,
+  robots: { index: false, follow: false },
+};
+
+const SECCIONES = [
+  'Responsable del tratamiento',
+  'Datos que recopilamos',
+  'Finalidad del tratamiento',
+  'Base legal',
+  'Compartición de datos',
+  'Conservación de datos',
+  'Tus derechos',
+  'Seguridad',
+  'Cambios a esta política',
+  'Contacto',
+];
+
+export default function PaginaPrivacidad() {
+  return (
+    <>
+      <div className="gradient-primario pt-32 pb-20 text-white">
+        <div className="contenedor">
+          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-3 block">
+            Legal
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Política de Privacidad</h1>
+          <p className="text-white/60 text-sm">Documento en preparación</p>
+        </div>
+      </div>
+
+      <ContenedorSeccion fondo="blanco">
+        <div className="max-w-3xl mx-auto">
+
+          {/* Banner en construcción */}
+          <div className="flex items-start gap-4 bg-acento-muy-claro border border-acento/30 rounded-2xl p-5 mb-10">
+            <Clock size={22} className="text-acento shrink-0 mt-0.5" />
+            <div>
+              <p className="font-semibold text-acento-oscuro mb-1">Documento en preparación</p>
+              <p className="text-sm text-texto-suave leading-relaxed">
+                La política de privacidad de {CONFIGURACION_SITIO.nombre} está siendo redactada
+                y será publicada próximamente. Para cualquier consulta sobre el tratamiento de
+                tus datos, contáctanos directamente a{' '}
+                <a href={`mailto:${CONFIGURACION_SITIO.email}`} className="text-primario hover:underline">
+                  {CONFIGURACION_SITIO.email}
+                </a>
+                .
+              </p>
+            </div>
+          </div>
+
+          {/* Estructura de secciones (placeholder) */}
+          <div className="space-y-4">
+            {SECCIONES.map((titulo, i) => (
+              <div key={i} className="border border-borde rounded-xl p-5">
+                <div className="flex items-center gap-3 mb-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primario-muy-claro text-primario text-xs font-bold shrink-0">
+                    {i + 1}
+                  </span>
+                  <h2 className="font-semibold text-texto">{titulo}</h2>
+                </div>
+                <div className="space-y-2 pl-10">
+                  <div className="h-3 bg-fondo-suave rounded w-full" />
+                  <div className="h-3 bg-fondo-suave rounded w-4/5" />
+                  {i % 3 === 0 && <div className="h-3 bg-fondo-suave rounded w-3/5" />}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 mt-10 text-texto-muy-suave text-xs">
+            <FileText size={13} />
+            <span>{CONFIGURACION_SITIO.nombre} · Santiago, Chile</span>
+          </div>
+
+        </div>
+      </ContenedorSeccion>
+    </>
+  );
+}
