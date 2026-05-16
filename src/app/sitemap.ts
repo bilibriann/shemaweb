@@ -1,4 +1,6 @@
-﻿import type { MetadataRoute } from 'next';
+﻿export const dynamic = 'force-static';
+
+import type { MetadataRoute } from 'next';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -1,4 +1,6 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+﻿export const dynamic = 'force-static';
+
+import { NextRequest, NextResponse } from 'next/server';
 import { obtenerEventos, obtenerEventoProximos } from '@/lib/servicios/servicioEventos';
 import type { RespuestaAPI, Evento } from '@/lib/tipos/type';
 

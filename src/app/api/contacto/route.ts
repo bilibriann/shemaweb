@@ -1,4 +1,6 @@
-﻿import { NextRequest, NextResponse } from 'next/server';
+﻿export const dynamic = 'force-static';
+
+import { NextRequest, NextResponse } from 'next/server';
 import { esquemaContacto } from '@/lib/utilidades/validaciones';
 import type { RespuestaAPI } from '@/lib/tipos/type';
 
