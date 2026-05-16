@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import { ENLACES_PIE_PAGINA } from '@/lib/constantes/navegacion';
+import { img } from '@/lib/utilidades/rutas';
 
 export function PieDePagina() {
   const anioActual = new Date().getFullYear();
@@ -17,7 +18,7 @@ export function PieDePagina() {
             <Link href="/" className="inline-flex items-center gap-3 mb-5">
               <div className="relative h-9 w-9 overflow-hidden rounded-lg">
                 <Image
-                  src="/contenido/png/logo.png"
+                  src={img("/contenido/png/logo.png")}
                   alt="Logo Iglesia SHEMA"
                   fill
                   className="object-contain"

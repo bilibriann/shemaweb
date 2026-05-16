@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Clock, MapPin } from 'lucide-react';
+import { img } from '@/lib/utilidades/rutas';
 
 import { Boton } from '@/componentes/ui/Boton';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
@@ -13,7 +14,7 @@ export function SeccionHero() {
     >
       {/* Imagen de fondo */}
       <Image
-        src="/contenido/png/hero.png"
+        src={img("/contenido/png/hero.png")}
         alt=""
         fill
         priority
@@ -58,7 +59,7 @@ export function SeccionHero() {
           }}
         >
           <Image
-            src="/contenido/png/logo-invertido.png"
+            src={img("/contenido/png/logo-invertido.png")}
             alt=""
             fill
             priority
@@ -83,7 +84,7 @@ export function SeccionHero() {
           <div className="mb-6 flex items-center gap-6">
             <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-sm">
               <Image
-                src="/contenido/png/logo-invertido.png"
+                src={img("/contenido/png/logo-invertido.png")}
                 alt="Logo Iglesia SHEMA"
                 fill
                 priority

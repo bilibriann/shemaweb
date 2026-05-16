@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { EncabezadoSeccion } from '@/componentes/ui/ContenedorSeccion';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import datosIglesia from '@/lib/contenido/iglesia.json';
+import { img } from '@/lib/utilidades/rutas';
 
 export const metadata: Metadata = {
   title: 'Nosotros',
@@ -40,7 +41,7 @@ export default function PaginaNosotros() {
                 }}
               >
                 <Image
-                  src="/contenido/png/logo.png"
+                  src={img("/contenido/png/logo.png")}
                   fill
                   alt=""
                   className="object-contain opacity-[0.18] blur-sm scale-125"

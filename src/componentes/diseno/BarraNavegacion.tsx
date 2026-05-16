@@ -8,6 +8,7 @@ import { Menu, X, ChevronRight } from 'lucide-react';
 import { ELEMENTOS_NAVEGACION } from '@/lib/constantes/navegacion';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import { cn } from '@/lib/utilidades/utilidades';
+import { img } from '@/lib/utilidades/rutas';
 
 export function BarraNavegacion() {
   const [menuAbierto, setMenuAbierto] = useState(false);
@@ -52,7 +53,7 @@ export function BarraNavegacion() {
           >
             <div className="relative h-9 w-9 overflow-hidden rounded-lg">
               <Image
-                src="/contenido/png/logo.png"
+                src={img("/contenido/png/logo.png")}
                 alt="Logo Iglesia SHEMA"
                 fill
                 className="object-contain"

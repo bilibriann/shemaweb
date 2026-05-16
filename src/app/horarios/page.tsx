@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail } from 'lucide-react';
 import { EncabezadoSeccion } from '@/componentes/ui/ContenedorSeccion';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import { obtenerHorarios } from '@/lib/servicios/servicioHorarios';
+import { img } from '@/lib/utilidades/rutas';
 import { formatearHora } from '@/lib/utilidades/utilidades';
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function PaginaHorarios() {
 
             {/* Imagen de fondo */}
             <Image
-              src="/contenido/png/santiago1.png"
+              src={img("/contenido/png/santiago1.png")}
               fill
               alt=""
               aria-hidden="true"

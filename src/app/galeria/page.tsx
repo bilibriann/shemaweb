@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { ImageIcon } from 'lucide-react';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
+import { img } from '@/lib/utilidades/rutas';
 
 export const metadata: Metadata = {
   title: 'Galería',
@@ -32,7 +33,7 @@ export default function PaginaGaleria() {
 
             {/* Imagen de fondo */}
             <Image
-              src="/contenido/png/santiago2.png"
+              src={img("/contenido/png/santiago2.png")}
               fill
               alt=""
               aria-hidden="true"
