@@ -1,36 +1,37 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { EncabezadoSeccion } from '@/componentes/ui/ContenedorSeccion';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import datosIglesia from '@/lib/contenido/iglesia.json';
 import { img } from '@/lib/utilidades/rutas';
+import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 
 export const metadata: Metadata = {
   title: 'Nosotros',
-  description: `Conoce la historia, visión, misión y valores de ${CONFIGURACION_SITIO.nombre} en Santiago, Chile.`,
+  description: `Conoce la historia, visión, misión y declaración de fe de ${CONFIGURACION_SITIO.nombre} en Santiago, Chile.`,
 };
 
 export default function PaginaNosotros() {
   return (
     <>
       {/* Hero */}
-      <div className="gradient-primario pt-32 pb-20 text-white">
+      <div className="gradient-primario pt-20 pb-4 text-white">
         <div className="contenedor">
-          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-3 block">
-            La iglesia
+          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-2 block">
+            Nuestra historia
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Nosotros</h1>
-          <p className="text-white/75 text-lg max-w-xl">
-            Conoce quiénes somos, de dónde venimos y hacia dónde vamos como comunidad.
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">Quiénes somos</h1>
+          <p className="text-white/75 text-base max-w-xl">
+            {datosIglesia.historia}
           </p>
         </div>
       </div>
 
       <div className="bg-fondo-suave py-10 md:py-14">
-        <div className="contenedor">
-          <div className="relative overflow-hidden rounded-3xl shadow-xl">
+        <div className="contenedor space-y-6">
 
-            {/* Historia con logo de fondo */}
+          {/* Declaración de Fe */}
+          <AnimarAlVer variante="derecha" retraso={120}>
+          <div className="relative overflow-hidden rounded-3xl shadow-xl">
             <section className="relative overflow-hidden z-10 bg-white/90 px-8 md:px-12 py-12 md:py-16">
               <div
                 className="pointer-events-none absolute inset-0 flex items-center justify-center"
@@ -48,28 +49,26 @@ export default function PaginaNosotros() {
                 />
               </div>
               <div className="relative z-10 max-w-3xl mx-auto">
-                <EncabezadoSeccion etiqueta="Nuestra historia">Quiénes somos</EncabezadoSeccion>
-                <p className="text-texto-suave leading-relaxed text-lg">{datosIglesia.historia}</p>
-              </div>
-            </section>
-
-            {/* Visión y Misión */}
-            <section className="relative z-10 bg-fondo-suave/90 px-8 md:px-12 py-12 md:py-16">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white rounded-2xl p-8 sombra-media">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primario text-white text-2xl mb-5">
-                    👁️
-                  </div>
-                  <h2 className="text-2xl font-bold text-texto mb-4">Visión</h2>
-                  <p className="text-texto-suave leading-relaxed">{datosIglesia.vision}</p>
+                <div className="mb-5">
+                  <span className="text-sm font-bold tracking-widest uppercase text-acento mb-3 block text-center">Lo que creemos</span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-texto linea-decorativa-centrada text-center">Declaración de Fe</h2>
                 </div>
-                <div className="bg-white rounded-2xl p-8 sombra-media">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-acento text-white text-2xl mb-5">
-                    🎯
-                  </div>
-                  <h2 className="text-2xl font-bold text-texto mb-4">Misión</h2>
-                  <p className="text-texto-suave leading-relaxed">{datosIglesia.mision}</p>
-                </div>
+                <p className="text-texto-suave leading-relaxed text-justify mb-8">
+                  Nuestra <strong className="text-texto">Misión</strong> es{' '}
+                  {datosIglesia.mision.charAt(0).toLowerCase() + datosIglesia.mision.slice(1)}{' '}
+                  Nuestra <strong className="text-texto">Visión</strong> es{' '}
+                  {datosIglesia.vision.charAt(0).toLowerCase() + datosIglesia.vision.slice(1)}
+                </p>
+                <ol className="space-y-5">
+                  {datosIglesia.principios.map((principio, indice) => (
+                    <li key={indice} className="flex gap-4">
+                      <span className="gradient-primario mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold text-white">
+                        {indice + 1}
+                      </span>
+                      <p className="text-texto-suave leading-relaxed text-justify">{principio}</p>
+                    </li>
+                  ))}
+                </ol>
               </div>
             </section>
 
@@ -86,8 +85,9 @@ export default function PaginaNosotros() {
                 </a>
               </div>
             </section>
-
           </div>
+          </AnimarAlVer>
+
         </div>
       </div>
     </>

@@ -1,7 +1,7 @@
 export const CONFIGURACION_SITIO = {
-  nombre: 'Iglesia SHEMA',
-  nombreCorto: 'SHEMA',
-  eslogan: 'Oye, Israel: Jehová nuestro Dios, Jehová uno es',
+  nombre: 'CALVARY SANTIAGO',
+  nombreCorto: 'CALVARY SANTIAGO',
+  eslogan: 'Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos — Mateo 18:20',
   descripcion:
     'Iglesia cristiana en Santiago, Chile. Adorando a Dios con todo nuestro ser y sirviendo a nuestra comunidad.',
   url: process.env.NEXT_PUBLIC_URL || 'https://iglesashema.cl',

@@ -2,6 +2,7 @@
 import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube } from 'lucide-react';
 import { ContenedorSeccion } from '@/componentes/ui/ContenedorSeccion';
 import { FormularioContacto } from '@/componentes/secciones/FormularioContacto';
+import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 
 export const metadata: Metadata = {
@@ -41,13 +42,13 @@ const mediosContacto = [
 export default function PaginaContacto() {
   return (
     <>
-      <div className="gradient-primario pt-32 pb-20 text-white">
+      <div className="gradient-primario pt-20 pb-4 text-white">
         <div className="contenedor">
-          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-3 block">
+          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-2 block">
             Comunícate
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contacto</h1>
-          <p className="text-white/75 text-lg max-w-xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">Contacto</h1>
+          <p className="text-white/75 text-base max-w-xl">
             Estamos aquí para escucharte. Escríbenos y te responderemos a la brevedad.
           </p>
         </div>
@@ -56,7 +57,7 @@ export default function PaginaContacto() {
       <ContenedorSeccion fondo="suave">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* Formulario */}
-          <div className="lg:col-span-2">
+          <AnimarAlVer variante="izquierda" className="lg:col-span-2">
             <div className="bg-white rounded-2xl p-8 sombra-media border border-borde">
               <h2 className="text-2xl font-bold text-texto mb-1">Envíanos un mensaje</h2>
               <p className="text-texto-suave mb-8">
@@ -64,9 +65,10 @@ export default function PaginaContacto() {
               </p>
               <FormularioContacto />
             </div>
-          </div>
+          </AnimarAlVer>
 
           {/* Información de contacto */}
+          <AnimarAlVer variante="derecha" retraso={100}>
           <div className="space-y-4">
             {mediosContacto.map(({ icono: Icono, titulo, contenido, href, tipo }) => (
               <div
@@ -117,6 +119,7 @@ export default function PaginaContacto() {
               </div>
             </div>
           </div>
+          </AnimarAlVer>
         </div>
       </ContenedorSeccion>
     </>

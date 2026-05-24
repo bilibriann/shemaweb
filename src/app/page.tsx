@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { ArrowRight, Heart } from 'lucide-react';
 import { SeccionHero } from '@/componentes/secciones/SeccionHero';
 import { SeccionEventos } from '@/componentes/secciones/SeccionEventos';
+import { SeccionGaleriaPrevia } from '@/componentes/secciones/SeccionGaleriaPrevia';
 import { ContenedorSeccion } from '@/componentes/ui/ContenedorSeccion';
+import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import { obtenerEventoProximos } from '@/lib/servicios/servicioEventos';
 import { obtenerHorarios } from '@/lib/servicios/servicioHorarios';
 import { formatearHora } from '@/lib/utilidades/utilidades';
@@ -25,18 +27,18 @@ export default function PaginaInicio() {
       {/* Sección bienvenida */}
       <ContenedorSeccion fondo="blanco" espacio="md">
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
+          <AnimarAlVer variante="izquierda">
           <div>
             <span className="text-acento mb-3 block text-sm font-bold tracking-widest uppercase">
-              Bienvenido a SHEMA
+              Bienvenido a CALVARY SANTIAGO
             </span>
             <h2 className="text-texto linea-decorativa mb-6 text-3xl font-bold md:text-4xl">
               Iglesia Cristiana en Santiago, Chile.
             </h2>
             <p className="text-texto-suave mb-4 leading-relaxed">
-              La palabra <strong className="text-primario">SHEMA</strong> viene del hebreo{' '}
-              <em>שְׁמַע</em> — «Escucha». Es el comienzo del mandamiento más importante que Jesús
-              mismo citó: «Escucha, Israel: el Señor nuestro Dios, el Señor es uno. Amarás al Señor
-              tu Dios con todo tu corazón».
+              Somos una comunidad cristiana en Santiago, Chile. Nuestra misión es anunciar el
+              evangelio de Jesucristo, formar discípulos y cooperar para el crecimiento espiritual
+              de los creyentes por medio de la comunión y la enseñanza fiel de la Palabra.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
@@ -55,8 +57,10 @@ export default function PaginaInicio() {
               </Link>
             </div>
           </div>
+          </AnimarAlVer>
 
           {/* Horarios rápidos */}
+          <AnimarAlVer variante="derecha" retraso={100}>
           <div className="bg-fondo-suave border-borde rounded-2xl border p-8">
             <h3 className="text-texto mb-6 flex items-center gap-2 text-xl font-bold">
               <span className="bg-acento flex h-7 w-7 items-center justify-center rounded-lg text-xs font-bold text-white">
@@ -90,10 +94,13 @@ export default function PaginaInicio() {
               Ver horarios completos →
             </Link>
           </div>
+          </AnimarAlVer>
         </div>
       </ContenedorSeccion>
 
       <SeccionEventos eventos={eventos} />
+
+      <SeccionGaleriaPrevia />
     </>
   );
 }

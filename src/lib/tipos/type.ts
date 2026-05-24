@@ -16,6 +16,7 @@ export interface Evento {
   id: string;
   titulo: string;
   descripcion: string;
+  gancho?: string;
   fecha: string;
   hora: string;
   lugar: string;

@@ -10,7 +10,7 @@ export const metadataBase: Metadata = {
   description: CONFIGURACION_SITIO.descripcion,
   keywords: [
     'iglesia cristiana',
-    'SHEMA',
+    'Calvary Santiago',
     'Santiago',
     'Chile',
     'fe',

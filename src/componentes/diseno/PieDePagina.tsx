@@ -19,7 +19,7 @@ export function PieDePagina() {
               <div className="relative h-9 w-9 overflow-hidden rounded-lg">
                 <Image
                   src={img("/contenido/png/logo.png")}
-                  alt="Logo Iglesia SHEMA"
+                  alt="Logo CALVARY SANTIAGO"
                   fill
                   className="object-contain"
                 />

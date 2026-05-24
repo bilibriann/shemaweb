@@ -4,6 +4,7 @@ import { Raleway, Cormorant_Garamond } from 'next/font/google';
 import { BarraNavegacion } from '@/componentes/diseno/BarraNavegacion';
 import { PieDePagina } from '@/componentes/diseno/PieDePagina';
 import { TransicionPagina } from '@/componentes/diseno/TransicionPagina';
+import { SuavizadorScroll } from '@/componentes/providers/SuavizadorScroll';
 import { metadataBase } from '@/lib/constantes/metadata';
 
 export const metadata = metadataBase;
@@ -27,6 +28,7 @@ export default function LayoutRaiz({ children }: { children: ReactNode }) {
   return (
     <html lang="es-CL" className={`${fuenteRaleway.variable} ${fuenteCormorant.variable}`}>
       <body>
+        <SuavizadorScroll />
         <BarraNavegacion />
         <main>
           <TransicionPagina>{children}</TransicionPagina>

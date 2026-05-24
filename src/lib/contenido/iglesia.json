@@ -1,7 +1,17 @@
 {
-  "vision": "Ser una iglesia que transforma vidas a través del mensaje del Evangelio, impactando Santiago y extendiéndose al mundo.",
-  "mision": "Amar a Dios con todo nuestro ser, hacer discípulos genuinos de Jesucristo y servir a nuestra comunidad con amor y excelencia.",
-  "historia": "La Iglesia SHEMA nació con el propósito de proclamar la Palabra de Dios con claridad y profundidad. Nuestro nombre viene del hebreo שְׁמַע — «Escucha» — el comienzo del mandamiento más importante: «Escucha, Israel: el Señor nuestro Dios, el Señor es uno» (Deuteronomio 6:4).",
+  "vision": "Ser luz de Cristo para nuestra ciudad.",
+  "mision": "Anunciar el evangelio de Jesucristo, formar discípulos y cooperar para el crecimiento espiritual de los creyentes por medio de la comunión y la enseñanza fiel de la Palabra.",
+  "historia": "CALVARY SANTIAGO nació con el propósito de proclamar la Palabra de Dios con claridad y profundidad, formando discípulos genuinos de Jesucristo y siendo luz de Cristo para nuestra ciudad.",
+  "principios": [
+    "Creemos que hay un Dios, quien existe eternamente en tres personas: Padre, Hijo, y Espíritu Santo.",
+    "Creemos que Dios el Padre es el Creador soberano, personal y trascendente de todas las cosas.",
+    "Creemos que Jesucristo el Hijo es completamente Dios y completamente hombre, que nació de la virgen María, vivió una vida sin pecado, y fue la propiciación de nuestros pecados por medio de Su muerte vicaria en la Cruz, fue resucitado en cuerpo por el poder del Espíritu Santo y ascendió a la diestra de Dios el Padre, y por siempre vive haciendo intercesión por nosotros.",
+    "Creemos que el Espíritu Santo es una persona divina, enviado después del ascenso de Jesucristo para morar, guiar, enseñar, dar poder al creyente, y convencer al mundo de pecado, de justicia, y de juicio.",
+    "Creemos que el hombre fue originalmente creado a la imagen y semejanza de Dios; cayó en desobediencia, y así incurrió tanto en la muerte espiritual como la física. Desde la caída del hombre todos nacen con una naturaleza pecaminosa y están separados de Dios por naturaleza y cada persona es responsable por su propio pecado, pero cuando una persona se arrepiente del pecado y acepta a Jesucristo como su Señor y Salvador personal, confiando en Él para salvación, esa persona es nacida de nuevo inmediatamente, y sellada por el Espíritu Santo, todos sus pecados son perdonados, y esa persona es hecha hijo de Dios, destinada a pasar la eternidad con El Señor.",
+    "Creemos que la evidencia de la salvación es el testimonio del Espíritu Santo a nuestro espíritu y la evidencia externa ante todos los hombres es una vida de justicia, santidad y el fruto que produce el Espíritu Santo.",
+    "Creemos que las Escrituras, tanto el Antiguo Testamento como el Nuevo Testamento, son inspirados por Dios, inerrables y son la revelación de Dios al hombre.",
+    "Creemos que la iglesia se reúne para la adoración a Dios, para edificación a través de la Palabra de Dios, para la oración, la comunión en un mismo sentir, la proclamación del evangelio en cuanto a su misión."
+  ],
   "valores": [
     {
       "titulo": "Fe Bíblica",

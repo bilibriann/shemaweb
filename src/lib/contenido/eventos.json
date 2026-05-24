@@ -1,22 +1,46 @@
 [
   {
-    "id": "EXAMPLE taller-matrimonios-agosto",
-    "titulo": "Taller: Matrimonios que Perduran",
-    "descripcion": "Un sábado dedicado a fortalecer tu matrimonio. Dinámicas, enseñanza práctica y tiempo en pareja para construir bases más sólidas en tu relación.",
-    "fecha": "2025-08-23",
+    "id": "culto-adoracion-junio-2026",
+    "titulo": "Culto de Adoración",
+    "descripcion": "Un domingo de adoración, predicación de la Palabra y comunión entre hermanos. Ven con tu familia y sé parte de este encuentro especial.",
+    "gancho": "Cada domingo es una nueva oportunidad para encontrarte con Dios.",
+    "fecha": "2026-06-01",
     "hora": "10:00",
-    "lugar": "Sala de reuniones Iglesia SHEMA",
-    "categoria": "especial",
+    "lugar": "CALVARY SANTIAGO, Av. Brasil 522",
+    "categoria": "culto",
+    "destacado": true
+  },
+  {
+    "id": "noche-jovenes-junio-2026",
+    "titulo": "Noche de Jóvenes: Identidad en Cristo",
+    "descripcion": "Una noche diseñada para jóvenes que quieren descubrir o reafirmar quiénes son en Cristo. Música en vivo, testimonios y un mensaje que impactará tu vida.",
+    "gancho": "Tu generación tiene un propósito. Ven a descubrirlo.",
+    "fecha": "2026-06-07",
+    "hora": "19:00",
+    "lugar": "CALVARY SANTIAGO, Av. Brasil 522",
+    "categoria": "jovenes",
     "destacado": false
   },
   {
-    "id": "EXAMPLE aniversario",
-    "titulo": "Culto de Aniversario Iglesia SHEMA",
-    "descripcion": "Celebramos un año más de la gracia de Dios sobre nuestra iglesia. Un culto especial de acción de gracias, testimonios y adoración. ¡Toda la familia es bienvenida!",
-    "fecha": "2025-10-05",
-    "hora": "10:00",
-    "lugar": "Iglesia SHEMA, Santiago",
-    "categoria": "especial",
+    "id": "retiro-jovenes-junio-2026",
+    "titulo": "Retiro de Jóvenes: Nuevas Alturas",
+    "descripcion": "Un fin de semana de encuentro, adoración y crecimiento espiritual para jóvenes de 15 a 30 años. Actividades al aire libre, talleres y momentos de profunda comunión con Dios.",
+    "gancho": "Un fin de semana que cambiará tu perspectiva para siempre.",
+    "fecha": "2026-06-13",
+    "hora": "09:00",
+    "lugar": "Centro de Retiros El Arrayán, Santiago",
+    "categoria": "retiro",
     "destacado": true
+  },
+  {
+    "id": "conferencia-familia-junio-2026",
+    "titulo": "Conferencia: Familia sobre la Roca",
+    "descripcion": "Una tarde de enseñanza práctica y bíblica sobre cómo edificar un hogar que honre a Dios. Para parejas, padres e hijos. Inscripción previa recomendada.",
+    "gancho": "El hogar más sólido se construye sobre la Palabra.",
+    "fecha": "2026-06-28",
+    "hora": "16:00",
+    "lugar": "CALVARY SANTIAGO, Av. Brasil 522",
+    "categoria": "conferencia",
+    "destacado": false
   }
 ]

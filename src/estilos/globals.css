@@ -219,4 +219,133 @@
     margin-inline: auto;
     border-radius: 9999px;
   }
+
+  /* ─── Scroll reveal ─── */
+  .al-ver,
+  .al-ver-izq,
+  .al-ver-der {
+    opacity: 0;
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .al-ver     { transform: translateY(36px); }
+  .al-ver-izq { transform: translateX(-36px); }
+  .al-ver-der { transform: translateX(36px); }
+
+  .al-ver.visible,
+  .al-ver-izq.visible,
+  .al-ver-der.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .al-ver,
+    .al-ver-izq,
+    .al-ver-der {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* ─── Animaciones hero: fondo ─── */
+  @keyframes heroFondo {
+    from {
+      opacity: 0;
+      transform: scale(1.06) translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  /* ─── Animaciones hero: elementos escalonados ─── */
+  @keyframes elementoEntrada {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* ─── Cursor typewriter ─── */
+  @keyframes parpadeo {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  /* ─── "Descubre más" pulse ─── */
+  @keyframes pulsarDescubrir {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+
+  /* ─── Flecha scroll bounce ─── */
+  @keyframes scrollFlecha {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+  .hero-fondo {
+    animation: heroFondo 2.2s ease-out both;
+  }
+
+  .elemento-entrada {
+    animation: elementoEntrada 1s ease-out both;
+  }
+
+  .cursor-tipeo {
+    animation: parpadeo 1s step-end infinite;
+  }
+
+  .pulsar-descubrir {
+    animation: pulsarDescubrir 2s ease-in-out infinite;
+  }
+
+  .scroll-flecha {
+    animation: scrollFlecha 1.8s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-fondo,
+    .elemento-entrada {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+
+    .pulsar-descubrir,
+    .scroll-flecha,
+    .cursor-tipeo {
+      animation: none;
+    }
+  }
+}
+
+/* Footer transparente — solo en página horarios (fuera del layer para mayor prioridad) */
+.footer-transparente footer[aria-label="Pie de página"] {
+  background-color: rgba(0, 0, 0, 0.55) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
 }

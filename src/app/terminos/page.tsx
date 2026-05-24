@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { FileText, Clock } from 'lucide-react';
 import { ContenedorSeccion } from '@/componentes/ui/ContenedorSeccion';
+import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 
 export const metadata: Metadata = {
@@ -23,12 +24,12 @@ const SECCIONES = [
 export default function PaginaTerminos() {
   return (
     <>
-      <div className="gradient-primario pt-32 pb-20 text-white">
+      <div className="gradient-primario pt-20 pb-4 text-white">
         <div className="contenedor">
-          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-3 block">
+          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-2 block">
             Legal
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Términos y Condiciones</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-2">Términos y Condiciones</h1>
           <p className="text-white/60 text-sm">Documento en preparación</p>
         </div>
       </div>
@@ -37,6 +38,7 @@ export default function PaginaTerminos() {
         <div className="max-w-3xl mx-auto">
 
           {/* Banner en construcción */}
+          <AnimarAlVer>
           <div className="flex items-start gap-4 bg-acento-muy-claro border border-acento/30 rounded-2xl p-5 mb-10">
             <Clock size={22} className="text-acento shrink-0 mt-0.5" />
             <div>
@@ -51,11 +53,13 @@ export default function PaginaTerminos() {
               </p>
             </div>
           </div>
+          </AnimarAlVer>
 
           {/* Estructura de secciones (placeholder) */}
           <div className="space-y-4">
             {SECCIONES.map((titulo, i) => (
-              <div key={i} className="border border-borde rounded-xl p-5">
+              <AnimarAlVer key={i} retraso={i * 50}>
+              <div className="border border-borde rounded-xl p-5">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primario-muy-claro text-primario text-xs font-bold shrink-0">
                     {i + 1}
@@ -68,13 +72,16 @@ export default function PaginaTerminos() {
                   {i % 3 === 0 && <div className="h-3 bg-fondo-suave rounded w-3/5" />}
                 </div>
               </div>
+              </AnimarAlVer>
             ))}
           </div>
 
+          <AnimarAlVer retraso={100}>
           <div className="flex items-center gap-2 mt-10 text-texto-muy-suave text-xs">
             <FileText size={13} />
             <span>{CONFIGURACION_SITIO.nombre} · Santiago, Chile</span>
           </div>
+          </AnimarAlVer>
 
         </div>
       </ContenedorSeccion>
