@@ -123,7 +123,7 @@ export function SeccionHero() {
           >
             <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-sm">
               <Image
-                src={img('/contenido/png/logo-invertido.png')}
+                src={img('/contenido/png/logo.png')}
                 alt="Logo CALVARY SANTIAGO"
                 fill
                 priority
