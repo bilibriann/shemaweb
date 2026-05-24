@@ -1,31 +1,18 @@
 'use client';
 
-import { useEffect } from 'react';
+import Image from 'next/image';
+import { img } from '@/lib/utilidades/rutas';
 
 export function FooterTransparente() {
-  useEffect(() => {
-    const body = document.body;
-    const html = document.documentElement;
-
-    html.style.background = 'transparent';
-    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
-    body.style.backgroundImage = `url('${basePath}/contenido/png/santiagorojo.png')`;
-    body.style.backgroundSize = 'cover';
-    body.style.backgroundPosition = 'center';
-    body.style.backgroundAttachment = 'fixed';
-    body.style.backgroundColor = 'transparent';
-    body.classList.add('footer-transparente');
-
-    return () => {
-      html.style.background = '';
-      body.style.backgroundImage = '';
-      body.style.backgroundSize = '';
-      body.style.backgroundPosition = '';
-      body.style.backgroundAttachment = '';
-      body.style.backgroundColor = '';
-      body.classList.remove('footer-transparente');
-    };
-  }, []);
-
-  return null;
+  return (
+    <div className="fixed inset-0 -z-20" aria-hidden="true">
+      <Image
+        src={img('/contenido/png/santiagorojo.png')}
+        alt=""
+        fill
+        priority
+        className="object-cover object-center"
+      />
+    </div>
+  );
 }
