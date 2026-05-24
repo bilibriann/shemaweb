@@ -8,7 +8,8 @@ export function FooterTransparente() {
     const html = document.documentElement;
 
     html.style.background = 'transparent';
-    body.style.backgroundImage = "url('/contenido/png/santiagorojo.png')";
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+    body.style.backgroundImage = `url('${basePath}/contenido/png/santiagorojo.png')`;
     body.style.backgroundSize = 'cover';
     body.style.backgroundPosition = 'center';
     body.style.backgroundAttachment = 'fixed';
