@@ -22,8 +22,6 @@ export default function PaginaEventos() {
   const todosLosEventos = obtenerEventos();
   const eventosProximos = obtenerEventoProximos();
   const eventosDestacados = eventosProximos.filter((e) => e.destacado);
-  const eventosNormales = eventosProximos.filter((e) => !e.destacado);
-
   return (
     <>
       {/* Hero */}

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { ELEMENTOS_NAVEGACION } from '@/lib/constantes/navegacion';
-import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import { cn } from '@/lib/utilidades/utilidades';
 import { img } from '@/lib/utilidades/rutas';
 
