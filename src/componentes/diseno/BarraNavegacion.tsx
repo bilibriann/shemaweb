@@ -60,7 +60,7 @@ export function BarraNavegacion() {
                 priority
               />
             </div>
-            {CONFIGURACION_SITIO.nombreCorto}
+            <span className="font-normal">CALVARY </span><strong>SANTIAGO</strong>
           </Link>
 
           {/* Navegación escritorio */}

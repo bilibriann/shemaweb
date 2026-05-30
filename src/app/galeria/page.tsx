@@ -30,7 +30,6 @@ export default function PaginaGaleria() {
 
       {/* Hero con efecto frosted glass */}
       <div className="relative pt-20 pb-4 text-white">
-        <div className="absolute inset-0 backdrop-blur-md bg-black/20" aria-hidden="true" />
         <div className="contenedor relative z-10">
           <span className="text-acento text-sm font-bold tracking-widest uppercase mb-2 block">
             Momentos

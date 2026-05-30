@@ -131,7 +131,7 @@ export function SeccionHero() {
               />
             </div>
             <h1 className="text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl">
-              {CONFIGURACION_SITIO.nombre}
+              <span className="font-normal">CALVARY </span><strong>SANTIAGO</strong>
             </h1>
           </div>
 

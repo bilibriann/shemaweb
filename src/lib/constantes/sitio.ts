@@ -7,8 +7,8 @@ export const CONFIGURACION_SITIO = {
   url: process.env.NEXT_PUBLIC_URL || 'https://iglesashema.cl',
   idioma: 'es-CL',
   zonaHoraria: 'America/Santiago',
-  email: 'contacto@iglesashema.cl',
-  telefono: '+56 9 0000 0000',
+  email: 'contacto@calvarysantiago.cl',
+  telefono: '+56 9 8139 2697',
   direccion: {
     calle: 'Av. Brasil, 522',
     ciudad: 'Santiago',
@@ -16,9 +16,9 @@ export const CONFIGURACION_SITIO = {
     pais: 'Chile',
   },
   redesSociales: {
-    instagram: 'https://instagram.com/iglesashema',
-    facebook: 'https://facebook.com/iglesashema',
-    youtube: 'https://youtube.com/@iglesashema',
+    instagram: 'https://www.instagram.com/calvaryshema/',
+    facebook: 'https://web.facebook.com/CalvaryShema',
+    youtube: 'https://www.youtube.com/@iglesiacalvarychapelshema5382',
   },
   fundacion: 2010,
 } as const;

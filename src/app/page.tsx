@@ -30,7 +30,7 @@ export default function PaginaInicio() {
           <AnimarAlVer variante="izquierda">
           <div>
             <span className="text-acento mb-3 block text-sm font-bold tracking-widest uppercase">
-              Bienvenido a CALVARY SANTIAGO
+              Bienvenido a <span className="font-normal">CALVARY </span><strong>SANTIAGO</strong>
             </span>
             <h2 className="text-texto linea-decorativa mb-6 text-3xl font-bold md:text-4xl">
               Iglesia Cristiana en Santiago, Chile.

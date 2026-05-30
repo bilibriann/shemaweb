@@ -24,13 +24,21 @@ export function PieDePagina() {
                   className="object-contain"
                 />
               </div>
-              <span className="text-xl font-bold font-display tracking-wide">
-                {CONFIGURACION_SITIO.nombreCorto}
+              <span className="text-xl font-display tracking-wide">
+                <span className="font-normal">CALVARY </span><strong>SANTIAGO</strong>
               </span>
             </Link>
-            <p className="text-white/70 text-sm leading-relaxed mb-6">
+            <p className="text-white/70 text-sm leading-relaxed mb-5">
               {CONFIGURACION_SITIO.descripcion}
             </p>
+            <a href="https://calvarychapelesp.com/" target="_blank" rel="noopener noreferrer" className="inline-block relative w-28 h-7 mb-5">
+              <Image
+                src={img("/contenido/png/calvarychapelcomblanco.png")}
+                alt="Calvary Chapel"
+                fill
+                className="object-contain object-left"
+              />
+            </a>
 
             {/* Redes sociales */}
             <div className="flex gap-3">
@@ -165,12 +173,17 @@ export function PieDePagina() {
 
         {/* Copyright */}
         <div className="border-t border-white/10 py-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-white/50">
-            © {anioActual} {CONFIGURACION_SITIO.nombre}. Todos los derechos reservados.
-          </p>
-          <p className="text-xs text-white/40">
-            Santiago, Chile · {CONFIGURACION_SITIO.idioma.toUpperCase()}
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-white/50">© {anioActual} · Santiago, Chile · {CONFIGURACION_SITIO.idioma.toUpperCase()}</span>
+          </div>
+          <a href="https://calvarychapelesp.com/" target="_blank" rel="noopener noreferrer" className="inline-block relative w-24 h-6">
+            <Image
+              src={img("/contenido/png/calvarychapelcomblanco.png")}
+              alt="Calvary Chapel"
+              fill
+              className="object-contain object-right"
+            />
+          </a>
         </div>
       </div>
     </footer>

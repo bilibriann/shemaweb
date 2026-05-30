@@ -22,7 +22,6 @@ export default function PaginaHorarios() {
 
       {/* Hero con efecto frosted glass */}
       <div className="relative pt-20 pb-4 text-white">
-        <div className="absolute inset-0 backdrop-blur-md bg-black/20" aria-hidden="true" />
         <div className="contenedor relative z-10">
           <span className="text-acento mb-2 block text-sm font-bold tracking-widest uppercase">
             Visítanos
@@ -137,10 +136,6 @@ export default function PaginaHorarios() {
                 </div>
               </div>
 
-              <div className="mt-6 rounded-2xl border border-white/20 bg-white/10 p-5">
-                <p className="mb-1 text-sm font-semibold text-white">Mapa próximamente</p>
-                <p className="text-xs text-white/60">El mapa interactivo estará disponible pronto.</p>
-              </div>
             </div>
             </AnimarAlVer>
 

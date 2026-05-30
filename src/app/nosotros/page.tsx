@@ -4,6 +4,7 @@ import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import datosIglesia from '@/lib/contenido/iglesia.json';
 import { img } from '@/lib/utilidades/rutas';
 import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
+import { VersiculoEscritura } from '@/componentes/ui/VersiculoEscritura';
 
 export const metadata: Metadata = {
   title: 'Nosotros',
@@ -14,19 +15,20 @@ export default function PaginaNosotros() {
   return (
     <>
       {/* Hero */}
-      <div className="gradient-primario pt-20 pb-4 text-white">
-        <div className="contenedor">
+      <div className="bg-fondo-suave pt-32 pb-2">
+        <div className="contenedor text-center">
           <span className="text-acento text-sm font-bold tracking-widest uppercase mb-2 block">
             Nuestra historia
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Quiénes somos</h1>
-          <p className="text-white/75 text-base max-w-xl">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-texto">Quiénes somos</h1>
+          <p className="text-texto-suave text-base max-w-3xl mx-auto text-justify">
             {datosIglesia.historia}
           </p>
+          <VersiculoEscritura />
         </div>
       </div>
 
-      <div className="bg-fondo-suave py-10 md:py-14">
+      <div className="bg-fondo-suave py-4 md:py-6">
         <div className="contenedor space-y-6">
 
           {/* Declaración de Fe */}
