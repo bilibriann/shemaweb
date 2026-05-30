@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const VERSICULO = '«Por tanto, id y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, y del Hijo, y del Espíritu Santo; enseñándoles que guarden todas las cosas que os he mandado; y he aquí yo estoy con vosotros todos los días, hasta el fin del mundo.»';
 const DELAY_INICIO_MS = 600;
-const VELOCIDAD_CHAR_MS = 22;
+const VELOCIDAD_CHAR_MS = 10;
 
 export function VersiculoEscritura() {
   const [charCount, setCharCount] = useState(0);
