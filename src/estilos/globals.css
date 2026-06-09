@@ -2,24 +2,24 @@
 
 @theme {
   /* ─── Paleta principal ─── */
-  --color-primario: #005F73;
-  --color-primario-oscuro: #004050;
-  --color-primario-claro: #0A9396;
-  --color-primario-muy-claro: #C8E8EA;
+  --color-primario: #004D5D;
+  --color-primario-oscuro: #003240;
+  --color-primario-claro: #087C7E;
+  --color-primario-muy-claro: #B0D4D7;
 
-  --color-acento: #EE9B00;
-  --color-acento-oscuro: #C47D00;
-  --color-acento-claro: #F4B840;
-  --color-acento-muy-claro: #FEF3DC;
+  --color-acento: #D68900;
+  --color-acento-oscuro: #A86B00;
+  --color-acento-claro: #DBA438;
+  --color-acento-muy-claro: #F3E5C6;
 
   /* ─── Neutros ─── */
-  --color-fondo: #FFF9F4;
-  --color-fondo-suave: #F0E8DF;
-  --color-fondo-media: #E4D8CE;
-  --color-texto: #0D2B35;
-  --color-texto-suave: #3D6472;
-  --color-texto-muy-suave: #7A9FAD;
-  --color-borde: #BEDDE4;
+  --color-fondo: #F2ECE7;
+  --color-fondo-suave: #DED5CC;
+  --color-fondo-media: #D0C4BA;
+  --color-texto: #081F28;
+  --color-texto-suave: #32515D;
+  --color-texto-muy-suave: #688A96;
+  --color-borde: #A7C7CE;
 
   /* ─── Tipografías ─── */
   --font-sans: var(--font-raleway);
@@ -342,6 +342,93 @@
     }
   }
 }
+
+  /* ─── Efecto gota cayendo palabra por palabra (versículo) ─── */
+  .gota-palabra {
+    display: inline-block;
+    opacity: 0;
+    animation: gotaCae 0.45s ease-out both;
+  }
+
+  @keyframes gotaCae {
+    0% {
+      opacity: 0;
+      transform: translateY(-18px) scaleY(0.6);
+      filter: blur(2px);
+    }
+    55% {
+      opacity: 1;
+      transform: translateY(5px) scaleY(1.1);
+      filter: blur(0);
+    }
+    75% {
+      transform: translateY(-2px) scaleY(0.96);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scaleY(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .gota-palabra {
+      animation: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* ─── Efecto ondas de agua (versículo) ─── */
+  .versiculo-onda {
+    position: relative;
+    cursor: default;
+    transition: color 0.4s ease;
+  }
+
+  .versiculo-onda::before,
+  .versiculo-onda::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .versiculo-onda:hover::before {
+    animation: ondaAgua 2.4s ease-out 0s infinite;
+  }
+
+  .versiculo-onda:hover::after {
+    animation: ondaAgua 2.4s ease-out 0.9s infinite;
+  }
+
+  @keyframes ondaAgua {
+    0% {
+      opacity: 1;
+      box-shadow:
+        0 0 0 0   rgba(238, 155, 0, 0.45),
+        0 0 0 0   rgba(238, 155, 0, 0.28),
+        0 0 0 0   rgba(238, 155, 0, 0.14);
+    }
+    100% {
+      opacity: 0;
+      box-shadow:
+        0 0 0 70px  rgba(238, 155, 0, 0),
+        0 0 0 140px rgba(238, 155, 0, 0),
+        0 0 0 210px rgba(238, 155, 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .versiculo-onda::before,
+    .versiculo-onda::after {
+      animation: none !important;
+    }
+  }
 
 /* Footer transparente — solo en página horarios (fuera del layer para mayor prioridad) */
 .footer-transparente footer[aria-label="Pie de página"] {

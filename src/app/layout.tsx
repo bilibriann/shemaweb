@@ -1,4 +1,4 @@
-﻿import type { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import '@/estilos/globals.css';
 import { Raleway, Cormorant_Garamond } from 'next/font/google';
 import { BarraNavegacion } from '@/componentes/diseno/BarraNavegacion';

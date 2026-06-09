@@ -50,7 +50,7 @@ export function SeccionHero() {
       {/* Imagen de fondo con zoom-out cinematográfico */}
       <div className="hero-fondo absolute inset-0">
         <Image
-          src={img('/contenido/png/hero.png')}
+          src={img('/contenido/Diseño/hero.png')}
           alt=""
           fill
           priority
@@ -92,7 +92,7 @@ export function SeccionHero() {
           }}
         >
           <Image
-            src={img('/contenido/png/logo-invertido.png')}
+            src={img('/contenido/Diseño/logo-invertido.png')}
             alt=""
             fill
             priority
@@ -123,15 +123,23 @@ export function SeccionHero() {
           >
             <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-2xl border border-white/20 bg-white/10 shadow-lg backdrop-blur-sm">
               <Image
-                src={img('/contenido/png/logo.png')}
+                src={img('/contenido/Diseño/logo.png')}
                 alt="Logo CALVARY SANTIAGO"
                 fill
                 priority
                 className="object-contain"
               />
             </div>
-            <h1 className="text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl">
-              <span className="font-normal">CALVARY </span><strong>SANTIAGO</strong>
+            <h1 className="text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl flex items-center">
+              <span className="font-normal">CALVARY</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/contenido/Diseño/cruz.png"
+                alt=""
+                className="mx-0.5 h-8 w-auto shrink-0 sm:h-10 lg:h-12"
+                style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(80%) saturate(600%) hue-rotate(1deg) brightness(103%)' }}
+              />
+              <strong>SANTIAGO</strong>
             </h1>
           </div>
 

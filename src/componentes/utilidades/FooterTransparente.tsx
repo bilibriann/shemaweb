@@ -7,7 +7,7 @@ export function FooterTransparente() {
   return (
     <div className="fixed inset-0 -z-20" aria-hidden="true">
       <Image
-        src={img('/contenido/png/santiagorojo.png')}
+        src={img('/contenido/Diseño/santiagorojo.png')}
         alt=""
         fill
         priority

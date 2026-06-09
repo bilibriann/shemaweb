@@ -1,0 +1,1 @@
+[[{"Pattern":"import \u0027@/estilos/globals.css\u0027;","Replacement":"// @ts-expect-error - CSS import handled by Next.js\nimport \u0027@/estilos/globals.css\u0027;"}]]

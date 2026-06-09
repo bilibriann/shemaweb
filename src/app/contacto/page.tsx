@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from 'next';
-import { MapPin, Phone, Mail, Clock, Instagram, Facebook, Youtube } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Share2, Play } from 'lucide-react';
 import { ContenedorSeccion } from '@/componentes/ui/ContenedorSeccion';
 import { FormularioContacto } from '@/componentes/secciones/FormularioContacto';
 import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
@@ -44,22 +44,22 @@ export default function PaginaContacto() {
     <>
       <div className="gradient-primario pt-20 pb-4 text-white">
         <div className="contenedor">
-          <span className="text-acento text-sm font-bold tracking-widest uppercase mb-2 block">
+          <span className="text-acento mb-2 block text-sm font-bold tracking-widest uppercase">
             Comunícate
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">Contacto</h1>
-          <p className="text-white/75 text-base max-w-xl">
+          <h1 className="mb-2 text-4xl font-bold md:text-5xl">Contacto</h1>
+          <p className="max-w-xl text-base text-white/75">
             Estamos aquí para escucharte. Escríbenos y te responderemos a la brevedad.
           </p>
         </div>
       </div>
 
       <ContenedorSeccion fondo="suave">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-3">
           {/* Formulario */}
           <AnimarAlVer variante="izquierda" className="lg:col-span-2">
-            <div className="bg-white rounded-2xl p-8 sombra-media border border-borde">
-              <h2 className="text-2xl font-bold text-texto mb-1">Envíanos un mensaje</h2>
+            <div className="sombra-media border-borde rounded-2xl border bg-white p-8">
+              <h2 className="text-texto mb-1 text-2xl font-bold">Envíanos un mensaje</h2>
               <p className="text-texto-suave mb-8">
                 Completa el formulario y te responderemos en menos de 24 horas.
               </p>
@@ -69,56 +69,68 @@ export default function PaginaContacto() {
 
           {/* Información de contacto */}
           <AnimarAlVer variante="derecha" retraso={100}>
-          <div className="space-y-4">
-            {mediosContacto.map(({ icono: Icono, titulo, contenido, href, tipo }) => (
-              <div
-                key={titulo}
-                className="bg-white rounded-xl p-5 sombra-suave border border-borde"
-              >
-                <div className="flex items-start gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primario-muy-claro text-primario shrink-0">
-                    <Icono size={18} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-texto text-sm mb-0.5">{titulo}</p>
-                    {tipo === 'enlace' && href ? (
-                      <a
-                        href={href}
-                        className="text-texto-suave text-sm hover:text-primario transition-colors whitespace-pre-line"
-                      >
-                        {contenido}
-                      </a>
-                    ) : (
-                      <p className="text-texto-suave text-sm whitespace-pre-line">{contenido}</p>
-                    )}
+            <div className="space-y-4">
+              {mediosContacto.map(({ icono: Icono, titulo, contenido, href, tipo }) => (
+                <div
+                  key={titulo}
+                  className="sombra-suave border-borde rounded-xl border bg-white p-5"
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="bg-primario-muy-claro text-primario flex h-10 w-10 shrink-0 items-center justify-center rounded-lg">
+                      <Icono size={18} />
+                    </div>
+                    <div>
+                      <p className="text-texto mb-0.5 text-sm font-semibold">{titulo}</p>
+                      {tipo === 'enlace' && href ? (
+                        <a
+                          href={href}
+                          className="text-texto-suave hover:text-primario text-sm whitespace-pre-line transition-colors"
+                        >
+                          {contenido}
+                        </a>
+                      ) : (
+                        <p className="text-texto-suave text-sm whitespace-pre-line">{contenido}</p>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
 
-            {/* Redes sociales */}
-            <div className="bg-white rounded-xl p-5 sombra-suave border border-borde">
-              <p className="font-semibold text-texto text-sm mb-4">Síguenos en redes</p>
-              <div className="flex gap-3">
-                {[
-                  { icono: Instagram, href: CONFIGURACION_SITIO.redesSociales.instagram, label: 'Instagram' },
-                  { icono: Facebook, href: CONFIGURACION_SITIO.redesSociales.facebook, label: 'Facebook' },
-                  { icono: Youtube, href: CONFIGURACION_SITIO.redesSociales.youtube, label: 'YouTube' },
-                ].map(({ icono: Icono, href, label }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="flex h-10 w-10 items-center justify-center rounded-lg bg-primario-muy-claro text-primario hover:bg-primario hover:text-white transition-all"
-                  >
-                    <Icono size={18} />
-                  </a>
-                ))}
+              {/* Redes sociales */}
+              <div className="sombra-suave border-borde rounded-xl border bg-white p-5">
+                <p className="text-texto mb-4 text-sm font-semibold">Síguenos en redes</p>
+                <div className="flex gap-3">
+                  {[
+                    {
+                      icono: Share2,
+                      href: CONFIGURACION_SITIO.redesSociales.instagram,
+                      label: 'Instagram',
+                    },
+                    {
+                      icono: Share2,
+                      href: CONFIGURACION_SITIO.redesSociales.facebook,
+                      label: 'Facebook',
+                    },
+                    {
+                      icono: Play,
+                      href: CONFIGURACION_SITIO.redesSociales.youtube,
+                      label: 'YouTube',
+                    },
+                  ].map(({ icono: Icono, href, label }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="bg-primario-muy-claro text-primario hover:bg-primario flex h-10 w-10 items-center justify-center rounded-lg transition-all hover:text-white"
+                    >
+                      <Icono size={18} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
           </AnimarAlVer>
         </div>
       </ContenedorSeccion>
