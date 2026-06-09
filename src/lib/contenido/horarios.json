@@ -4,7 +4,7 @@
     "orden": 1,
     "servicios": [
       {
-        "tipo": "Culto de Adoración",
+        "tipo": "Culto principal",
         "hora": "10:30",
         "descripcion": "Servicio principal con alabanza, adoración y predicación de la Palabra"
       }
@@ -15,7 +15,7 @@
     "orden": 2,
     "servicios": [
       {
-        "tipo": "Estudio Bíblico",
+        "tipo": "Estudio bíblico",
         "hora": "19:30",
         "descripcion": "Estudio de la Palabra de Dios, adoración y predicación de la Palabra"
       }

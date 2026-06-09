@@ -8,7 +8,7 @@ import { ContenedorSeccion } from '@/componentes/ui/ContenedorSeccion';
 import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import { obtenerEventoProximos } from '@/lib/servicios/servicioEventos';
 import { obtenerHorarios } from '@/lib/servicios/servicioHorarios';
-import { formatearHora } from '@/lib/utilidades/utilidades';
+import { TarjetaHorarios } from '@/componentes/ui/TarjetaHorarios';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 
 export const metadata: Metadata = {
@@ -29,9 +29,17 @@ export default function PaginaInicio() {
         <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
           <AnimarAlVer variante="izquierda">
           <div>
-            <span className="text-acento mb-3 block text-sm font-bold tracking-widest uppercase">
-              Bienvenido a <span className="font-normal">CALVARY </span><strong>SANTIAGO</strong>
-            </span>
+            <div className="text-acento mb-3 flex items-center gap-0 text-sm font-bold tracking-widest uppercase">
+              <span className="font-normal">Bienvenido a CALVARY</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/contenido/Diseño/cruz.png"
+                alt="cruz"
+                className="mx-0.5 h-8 w-auto shrink-0"
+                style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(80%) saturate(600%) hue-rotate(1deg) brightness(103%)' }}
+              />
+              <strong>SANTIAGO</strong>
+            </div>
             <h2 className="text-texto linea-decorativa mb-6 text-3xl font-bold md:text-4xl">
               Iglesia Cristiana en Santiago, Chile.
             </h2>
@@ -43,14 +51,14 @@ export default function PaginaInicio() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/nosotros"
-                className="bg-primario hover:bg-primario-oscuro inline-flex items-center gap-2 rounded-lg px-6 py-2.5 font-semibold text-white transition-colors"
+                className="bg-primario hover:bg-primario-oscuro inline-flex items-center gap-2 px-6 py-2.5 font-semibold text-white transition-colors"
               >
                 Nuestra historia
                 <ArrowRight size={18} />
               </Link>
               <Link
                 href="/contacto"
-                className="border-primario text-primario hover:bg-primario inline-flex items-center gap-2 rounded-lg border-2 px-6 py-2.5 font-semibold transition-all hover:text-white"
+                className="border-primario text-primario hover:bg-primario inline-flex items-center gap-2 border-2 px-6 py-2.5 font-semibold transition-all hover:text-white"
               >
                 <Heart size={18} />
                 Contáctanos
@@ -61,39 +69,7 @@ export default function PaginaInicio() {
 
           {/* Horarios rápidos */}
           <AnimarAlVer variante="derecha" retraso={100}>
-          <div className="bg-fondo-suave border-borde rounded-2xl border p-8">
-            <h3 className="text-texto mb-6 flex items-center gap-2 text-xl font-bold">
-              <span className="bg-acento flex h-7 w-7 items-center justify-center rounded-lg text-xs font-bold text-white">
-                ⏰
-              </span>
-              Horarios de culto
-            </h3>
-            <div className="space-y-5">
-              {horarios.map((horario) => (
-                <div key={horario.dia} className="flex items-start gap-4">
-                  <div className="min-w-[90px]">
-                    <span className="text-primario text-sm font-bold">{horario.dia}</span>
-                  </div>
-                  <div className="flex-1 space-y-1">
-                    {horario.servicios.map((servicio, i) => (
-                      <div key={i} className="text-sm">
-                        <span className="text-texto font-semibold">
-                          {formatearHora(servicio.hora)}
-                        </span>
-                        <span className="text-texto-suave"> — {servicio.tipo}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <Link
-              href="/horarios"
-              className="text-primario hover:text-acento mt-6 block text-center text-sm font-semibold transition-colors"
-            >
-              Ver horarios completos →
-            </Link>
-          </div>
+            <TarjetaHorarios horarios={horarios} variante="claro" mostrarEnlace />
           </AnimarAlVer>
         </div>
       </ContenedorSeccion>

@@ -15,14 +15,14 @@ export default function PaginaNoEncontrada() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/"
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg bg-acento text-white font-semibold hover:bg-acento-oscuro transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-acento text-white font-semibold hover:bg-acento-oscuro transition-colors"
           >
             <Home size={18} />
             Ir al inicio
           </Link>
           <button
             onClick={() => history.back()}
-            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-2.5 border-2 border-white/30 text-white font-semibold hover:bg-white/10 transition-colors"
           >
             <ArrowLeft size={18} />
             Volver

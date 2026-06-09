@@ -24,7 +24,7 @@ export function SeccionEventos({ eventos }: PropiedadesSeccionEventos) {
 
       <div className="mt-10 text-center">
         <Link href="/eventos">
-          <button className="bg-primario hover:bg-primario-oscuro inline-flex items-center gap-2 rounded-xl px-8 py-3.5 font-semibold text-white transition-colors">
+          <button className="bg-primario hover:bg-primario-oscuro inline-flex items-center gap-2 px-8 py-3.5 font-semibold text-white transition-colors">
             Ver todos los eventos
             <ArrowRight size={18} />
           </button>

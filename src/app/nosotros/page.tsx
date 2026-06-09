@@ -44,7 +44,7 @@ export default function PaginaNosotros() {
                 }}
               >
                 <Image
-                  src={img("/contenido/png/logo.png")}
+                  src={img("/contenido/Diseño/logo.png")}
                   fill
                   alt=""
                   className="object-contain opacity-[0.18] blur-sm scale-125"
@@ -81,7 +81,7 @@ export default function PaginaNosotros() {
                 <p className="text-white/75 mb-6">Ven a uno de nuestros cultos o escríbenos. Somos una familia y te esperamos.</p>
                 <a
                   href="/contacto"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-acento text-white font-semibold hover:bg-acento-oscuro transition-colors"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 bg-acento text-white font-semibold hover:bg-acento-oscuro transition-colors"
                 >
                   Contáctanos
                 </a>

@@ -28,8 +28,7 @@ export function formatearHora(hora: string): string {
   const [horas, minutos] = hora.split(':');
   const h = parseInt(horas, 10);
   const sufijo = h >= 12 ? 'PM' : 'AM';
-  const hora12 = h % 12 || 12;
-  return `${hora12}:${minutos} ${sufijo}`;
+  return `${horas}:${minutos} ${sufijo}`;
 }
 
 export function truncarTexto(texto: string, limite: number): string {

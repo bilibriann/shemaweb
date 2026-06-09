@@ -34,10 +34,8 @@ export function BarraNavegacion() {
   return (
     <header
       className={cn(
-        'fixed top-0 right-0 left-0 z-50 transition-all duration-300',
-        desplazado
-          ? 'sombra-media border-borde border-b bg-white/95 backdrop-blur-md'
-          : 'bg-primario-oscuro',
+        'fixed top-0 right-0 left-0 z-50 transition-all duration-300 border-b border-borde bg-white',
+        desplazado && 'sombra-media',
       )}
     >
       <nav className="contenedor" aria-label="Navegación principal">
@@ -46,20 +44,29 @@ export function BarraNavegacion() {
           <Link
             href="/"
             className={cn(
-              'font-display flex items-center gap-3 text-xl font-bold tracking-wide transition-colors',
-              desplazado ? 'text-primario' : 'text-white',
+              'font-display flex items-center gap-3 text-xl font-bold tracking-wide transition-colors text-primario',
             )}
           >
             <div className="relative h-9 w-9 overflow-hidden rounded-lg">
               <Image
-                src={img("/contenido/png/logo.png")}
+                src={img("/contenido/Diseño/logo.png")}
                 alt="Logo CALVARY SANTIAGO"
                 fill
                 className="object-contain"
                 priority
               />
             </div>
-            <span className="font-normal">CALVARY </span><strong>SANTIAGO</strong>
+            <span className="flex items-center">
+              <span className="font-normal">CALVARY</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/contenido/Diseño/cruz.png"
+                alt=""
+                className="mx-0.5 h-5 w-auto shrink-0"
+                style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(80%) saturate(600%) hue-rotate(1deg) brightness(103%)' }}
+              />
+              <strong>SANTIAGO</strong>
+            </span>
           </Link>
 
           {/* Navegación escritorio */}
@@ -71,14 +78,10 @@ export function BarraNavegacion() {
                   <Link
                     href={elemento.ruta}
                     className={cn(
-                      'nav-indicador rounded-md px-3 py-2 text-sm font-medium transition-all duration-200',
+                      'nav-indicador px-3 py-2 text-sm font-medium transition-all duration-200',
                       activo
-                        ? desplazado
-                          ? 'text-primario bg-primario-muy-claro font-semibold'
-                          : 'text-acento-claro bg-white/10 font-semibold'
-                        : desplazado
-                          ? 'text-texto hover:text-primario hover:bg-primario-muy-claro'
-                          : 'text-white/85 hover:bg-white/10 hover:text-white',
+                        ? 'text-primario bg-primario-muy-claro font-semibold'
+                        : 'text-texto hover:text-primario hover:bg-primario-muy-claro',
                     )}
                     aria-current={activo ? 'page' : undefined}
                   >
@@ -93,12 +96,7 @@ export function BarraNavegacion() {
           <div className="hidden items-center lg:flex">
             <Link
               href="/contacto"
-              className={cn(
-                'rounded-lg px-5 py-2 text-sm font-semibold transition-all duration-200',
-                desplazado
-                  ? 'bg-acento hover:bg-acento-oscuro text-white'
-                  : 'bg-acento hover:bg-acento-claro text-white',
-              )}
+              className="px-5 py-2 text-sm font-semibold transition-all duration-200 bg-acento hover:bg-acento-oscuro text-white"
             >
               Contáctanos
             </Link>
@@ -107,10 +105,7 @@ export function BarraNavegacion() {
           {/* Botón menú móvil */}
           <button
             onClick={() => setMenuAbierto(!menuAbierto)}
-            className={cn(
-              'rounded-md p-2 transition-colors lg:hidden',
-              desplazado ? 'text-texto hover:bg-fondo-suave' : 'text-white hover:bg-white/10',
-            )}
+            className="p-2 transition-colors lg:hidden text-texto hover:bg-fondo-suave"
             aria-label={menuAbierto ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={menuAbierto}
             aria-controls="menu-movil"
@@ -136,7 +131,7 @@ export function BarraNavegacion() {
                     <Link
                       href={elemento.ruta}
                       className={cn(
-                        'flex items-center justify-between rounded-xl px-4 py-3.5 text-base font-medium transition-all',
+                        'flex items-center justify-between px-4 py-3.5 text-base font-medium transition-all',
                         activo
                           ? 'bg-primario-muy-claro text-primario font-semibold'
                           : 'text-texto hover:bg-fondo-suave',
@@ -157,7 +152,7 @@ export function BarraNavegacion() {
             <div className="border-borde mt-8 border-t pt-6">
               <Link
                 href="/contacto"
-                className="bg-acento hover:bg-acento-oscuro flex w-full items-center justify-center rounded-xl py-3.5 text-base font-semibold text-white transition-colors"
+                className="bg-acento hover:bg-acento-oscuro flex w-full items-center justify-center py-3.5 text-base font-semibold text-white transition-colors"
               >
                 Contáctanos
               </Link>
