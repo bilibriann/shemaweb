@@ -134,7 +134,7 @@ export function SeccionHero() {
               <span className="font-normal">CALVARY</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/contenido/Diseño/cruz.png"
+                src={img("/contenido/Diseño/cruz.png")}
                 alt=""
                 className="mx-0.5 h-8 w-auto shrink-0 sm:h-10 lg:h-12"
                 style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(80%) saturate(600%) hue-rotate(1deg) brightness(103%)' }}

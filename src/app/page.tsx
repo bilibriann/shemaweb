@@ -8,6 +8,7 @@ import { ContenedorSeccion } from '@/componentes/ui/ContenedorSeccion';
 import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import { obtenerEventoProximos } from '@/lib/servicios/servicioEventos';
 import { obtenerHorarios } from '@/lib/servicios/servicioHorarios';
+import { img } from '@/lib/utilidades/rutas';
 import { TarjetaHorarios } from '@/componentes/ui/TarjetaHorarios';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 
@@ -33,7 +34,7 @@ export default function PaginaInicio() {
               <span className="font-normal">Bienvenido a CALVARY</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/contenido/Diseño/cruz.png"
+                src={img("/contenido/Diseño/cruz.png")}
                 alt="cruz"
                 className="mx-0.5 h-8 w-auto shrink-0"
                 style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(80%) saturate(600%) hue-rotate(1deg) brightness(103%)' }}
