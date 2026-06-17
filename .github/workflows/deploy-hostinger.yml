@@ -33,6 +33,9 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          # Hostinger exige FTPS explícito en el puerto 21 (el FTP plano queda colgado).
+          protocol: ftps
+          port: 21
           local-dir: ./out/
           # La cuenta FTP dedicada ya aterriza dentro de public_html,
           # por eso el destino es la raíz de esa conexión ("./").
