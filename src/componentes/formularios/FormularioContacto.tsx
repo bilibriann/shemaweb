@@ -161,14 +161,6 @@ export function FormularioContacto() {
         </div>
       )}
 
-      <p className="text-xs text-texto-suave">
-        Al enviar este formulario aceptas nuestra{' '}
-        <a href="/privacidad" className="text-primario hover:underline">
-          Política de Privacidad
-        </a>
-        .
-      </p>
-
       <Boton
         type="submit"
         variante="primario"

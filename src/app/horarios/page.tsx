@@ -4,7 +4,7 @@ import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import { TarjetaHorarios } from '@/componentes/ui/TarjetaHorarios';
 import { obtenerHorarios } from '@/lib/servicios/servicioHorarios';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
-import { FooterTransparente } from '@/componentes/utilidades/FooterTransparente';
+import { FondoFijo } from '@/componentes/ui/FondoFijo';
 
 export const metadata: Metadata = {
   title: 'Horarios',
@@ -16,7 +16,7 @@ export default function PaginaHorarios() {
 
   return (
     <>
-      <FooterTransparente />
+      <FondoFijo src="/contenido/diseno/santiagorojo.png" />
       {/* Overlay oscuro fijo para legibilidad */}
       <div className="fixed inset-0 -z-10 bg-black/45" />
 

@@ -10,6 +10,9 @@
 /dist/
 /build
 
+# Artefacto de despliegue (generado por subida manual a Hostinger)
+/shema-sitio.zip
+
 # Variables de entorno
 .env
 .env.local

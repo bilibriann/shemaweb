@@ -22,6 +22,7 @@ export default function PaginaEventos() {
   const todosLosEventos = obtenerEventos();
   const eventosProximos = obtenerEventoProximos();
   const eventosDestacados = eventosProximos.filter((e) => e.destacado);
+  const otrosEventos = eventosProximos.filter((e) => !e.destacado);
   return (
     <>
       {/* Hero */}
@@ -70,7 +71,7 @@ export default function PaginaEventos() {
                 const { dia, mes } = parsearFecha(evento.fecha);
                 return (
                   <AnimarAlVer key={evento.id} retraso={indice * 120}>
-                    <article className="tarjeta-interactiva sombra-media border-borde overflow-hidden rounded-2xl border bg-white flex flex-col">
+                    <article id={`evento-${evento.id}`} className="tarjeta-interactiva evento-destino sombra-media border-borde scroll-mt-28 overflow-hidden rounded-2xl border bg-white flex flex-col">
                       <div className="gradient-primario p-6 flex items-start gap-5">
                         <div className="shrink-0 bg-white/15 rounded-xl px-4 py-3 text-center min-w-[64px]">
                           <span className="block text-3xl font-bold text-white leading-none">{dia}</span>
@@ -110,6 +111,53 @@ export default function PaginaEventos() {
         </section>
       )}
 
+      {/* Próximos eventos (agenda completa) */}
+      {otrosEventos.length > 0 && (
+        <section className="bg-fondo py-16 md:py-20">
+          <div className="contenedor">
+            <AnimarAlVer>
+              <span className="text-acento mb-3 block text-sm font-bold tracking-widest uppercase">Agenda</span>
+              <h2 className="linea-decorativa text-3xl md:text-4xl font-bold text-texto mb-12">Próximos Eventos</h2>
+            </AnimarAlVer>
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {otrosEventos.map((evento, indice) => {
+                const { dia, mes } = parsearFecha(evento.fecha);
+                return (
+                  <AnimarAlVer key={evento.id} retraso={indice * 100}>
+                    <article id={`evento-${evento.id}`} className="tarjeta-interactiva evento-destino sombra-suave border-borde scroll-mt-28 flex h-full flex-col rounded-2xl border bg-white p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primario-muy-claro min-w-[60px] shrink-0 rounded-xl px-3.5 py-2.5 text-center">
+                          <span className="text-primario block text-2xl font-bold leading-none">{dia}</span>
+                          <span className="text-acento mt-1 block text-xs font-bold tracking-widest">{mes}</span>
+                        </div>
+                        <div className="flex-1">
+                          <Insignia variante="primario" className="mb-2">
+                            {ETIQUETAS_CATEGORIA_EVENTO[evento.categoria]}
+                          </Insignia>
+                          <h3 className="text-texto text-lg font-bold leading-tight">{evento.titulo}</h3>
+                        </div>
+                      </div>
+                      {evento.descripcion && (
+                        <p className="text-texto-suave mt-4 text-sm leading-relaxed">{evento.descripcion}</p>
+                      )}
+                      <div className="mt-4 space-y-2 text-sm">
+                        <div className="text-texto flex items-center gap-2">
+                          <Clock size={14} className="text-acento shrink-0" />
+                          <span>{formatearFechaChile(evento.fecha)} — {formatearHora(evento.hora)}</span>
+                        </div>
+                        <div className="text-texto-suave flex items-center gap-2">
+                          <MapPin size={14} className="text-acento shrink-0" />
+                          <span>{evento.lugar}</span>
+                        </div>
+                      </div>
+                    </article>
+                  </AnimarAlVer>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
 
       {todosLosEventos.length === 0 && (
         <section className="bg-fondo-suave py-20">

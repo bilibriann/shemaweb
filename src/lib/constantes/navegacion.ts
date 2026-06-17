@@ -17,10 +17,6 @@ export const ENLACES_PIE_PAGINA = {
   recursos: [
     { etiqueta: 'Eventos', ruta: '/eventos' },
     { etiqueta: 'Galería', ruta: '/galeria' },
-  ],
-  legal: [
-    { etiqueta: 'Política de Privacidad', ruta: '/privacidad' },
-    { etiqueta: 'Términos y Condiciones', ruta: '/terminos' },
     { etiqueta: 'Contacto', ruta: '/contacto' },
   ],
 };

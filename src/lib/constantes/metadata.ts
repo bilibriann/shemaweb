@@ -40,25 +40,10 @@ export const metadataBase: Metadata = {
     siteName: CONFIGURACION_SITIO.nombre,
     title: CONFIGURACION_SITIO.nombre,
     description: CONFIGURACION_SITIO.descripcion,
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: CONFIGURACION_SITIO.nombre,
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: CONFIGURACION_SITIO.nombre,
     description: CONFIGURACION_SITIO.descripcion,
-    images: ['/og-image.jpg'],
   },
-  icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/site.webmanifest',
 };

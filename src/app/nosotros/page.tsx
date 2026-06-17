@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
+import Link from 'next/link';
 import { CONFIGURACION_SITIO } from '@/lib/constantes/sitio';
 import datosIglesia from '@/lib/contenido/iglesia.json';
 import { img } from '@/lib/utilidades/rutas';
 import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
-import { VersiculoEscritura } from '@/componentes/ui/VersiculoEscritura';
 
 export const metadata: Metadata = {
   title: 'Nosotros',
@@ -22,9 +22,23 @@ export default function PaginaNosotros() {
           </span>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-texto">Quiénes somos</h1>
           <p className="text-texto-suave text-base max-w-3xl mx-auto text-justify">
-            {datosIglesia.historia}
+            {datosIglesia.historia.split('Calvary Global Network').flatMap((parte, i) =>
+              i === 0
+                ? [parte]
+                : [
+                    <a
+                      key="cgn"
+                      href="https://calvarychapelesp.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-acento font-semibold hover:underline"
+                    >
+                      Calvary Global Network
+                    </a>,
+                    parte,
+                  ],
+            )}
           </p>
-          <VersiculoEscritura />
         </div>
       </div>
 
@@ -44,7 +58,7 @@ export default function PaginaNosotros() {
                 }}
               >
                 <Image
-                  src={img("/contenido/Diseño/logo.png")}
+                  src={img("/contenido/diseno/logo.png")}
                   fill
                   alt=""
                   className="object-contain opacity-[0.18] blur-sm scale-125"
@@ -79,12 +93,12 @@ export default function PaginaNosotros() {
               <div className="text-center text-white">
                 <h2 className="text-2xl font-bold mb-3">¿Quieres conocernos más?</h2>
                 <p className="text-white/75 mb-6">Ven a uno de nuestros cultos o escríbenos. Somos una familia y te esperamos.</p>
-                <a
+                <Link
                   href="/contacto"
                   className="inline-flex items-center gap-2 px-8 py-3.5 bg-acento text-white font-semibold hover:bg-acento-oscuro transition-colors"
                 >
                   Contáctanos
-                </a>
+                </Link>
               </div>
             </section>
           </div>

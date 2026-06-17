@@ -44,12 +44,3 @@ export interface RespuestaAPI<T = unknown> {
   mensaje?: string;
   errores?: Record<string, string[]>;
 }
-
-export interface DatosFormularioContacto {
-  nombre: string;
-  correo: string;
-  telefono?: string;
-  asunto: string;
-  mensaje: string;
-  campoCebo?: string;
-}

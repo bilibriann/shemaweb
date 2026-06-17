@@ -18,17 +18,17 @@ export function PieDePagina() {
             <Link href="/" className="mb-5 inline-flex items-center gap-3">
               <div className="relative h-9 w-9 overflow-hidden rounded-lg">
                 <Image
-                  src={img('/contenido/Diseño/logo.png')}
+                  src={img('/contenido/diseno/logo.png')}
                   alt="Logo CALVARY SANTIAGO"
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="font-display flex items-center text-xl tracking-wide">
+              <span className="font-display flex flex-wrap items-center text-xl tracking-wide">
                 <span className="font-normal">CALVARY</span>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={img("/contenido/Diseño/cruz.png")}
+                  src={img("/contenido/diseno/cruz.png")}
                   alt=""
                   className="mx-0.5 h-5 w-auto shrink-0"
                   style={{
@@ -49,7 +49,7 @@ export function PieDePagina() {
               className="relative mb-5 inline-block h-7 w-28"
             >
               <Image
-                src={img('/contenido/Diseño/CGN_MAINLOGO_WHITE-1.png')}
+                src={img('/contenido/diseno/CGN_MAINLOGO_WHITE-1.png')}
                 alt="CGN"
                 fill
                 className="object-contain object-left"
@@ -130,22 +130,6 @@ export function PieDePagina() {
                 </li>
               ))}
             </ul>
-
-            <h3 className="text-acento mt-8 mb-5 text-sm font-bold tracking-widest uppercase">
-              Legal
-            </h3>
-            <ul className="space-y-3">
-              {ENLACES_PIE_PAGINA.legal.map((enlace) => (
-                <li key={enlace.ruta}>
-                  <Link
-                    href={enlace.ruta}
-                    className="text-sm text-white/70 transition-colors duration-200 hover:text-white"
-                  >
-                    {enlace.etiqueta}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {/* Columna 4: Contacto */}
@@ -206,7 +190,7 @@ export function PieDePagina() {
             className="relative inline-block h-6 w-24"
           >
             <Image
-              src={img('/contenido/Diseño/CGN_MAINLOGO_WHITE-1.png')}
+              src={img('/contenido/diseno/CGN_MAINLOGO_WHITE-1.png')}
               alt="CGN"
               fill
               className="object-contain object-right"

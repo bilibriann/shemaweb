@@ -1,46 +1,35 @@
 [
   {
-    "id": "culto-adoracion-junio-2026",
-    "titulo": "Culto de Adoración",
+    "id": "jovenes-eclesiastes-junio-2026",
+    "titulo": "Jóvenes: Clase de Eclesiastés",
     "descripcion": "",
     "gancho": "",
-    "fecha": "2026-06-01",
+    "fecha": "2026-06-20",
     "hora": "10:00",
-    "lugar": "CALVARY SANTIAGO, Av. Brasil 522",
-    "categoria": "culto",
-    "destacado": true
-  },
-  {
-    "id": "noche-jovenes-junio-2026",
-    "titulo": "Noche de Jóvenes: Identidad en Cristo",
-    "descripcion": "Una noche diseñada para jóvenes que quieren descubrir o reafirmar quiénes son en Cristo. Música en vivo, testimonios y un mensaje que impactará tu vida.",
-    "gancho": "Tu generación tiene un propósito. Ven a descubrirlo.",
-    "fecha": "2026-06-07",
-    "hora": "19:00",
     "lugar": "CALVARY SANTIAGO, Av. Brasil 522",
     "categoria": "jovenes",
     "destacado": false
   },
   {
-    "id": "retiro-jovenes-junio-2026",
-    "titulo": "Retiro de Jóvenes",
+    "id": "ministerio-mujeres-junio-2026",
+    "titulo": "Ministerio de Mujeres",
     "descripcion": "",
     "gancho": "",
-    "fecha": "2026-06-13",
-    "hora": "09:00",
-    "lugar": "Centro de Retiros El Arrayán, Santiago",
-    "categoria": "retiro",
-    "destacado": true
+    "fecha": "2026-06-27",
+    "hora": "10:30",
+    "lugar": "CALVARY SANTIAGO, Av. Brasil 522",
+    "categoria": "especial",
+    "destacado": false
   },
   {
-    "id": "conferencia-familia-junio-2026",
-    "titulo": "Conferencia: Familia sobre la Roca",
-    "descripcion": "Una tarde de enseñanza práctica y bíblica sobre cómo edificar un hogar que honre a Dios. Para parejas, padres e hijos. Inscripción previa recomendada.",
-    "gancho": "El hogar más sólido se construye sobre la Palabra.",
+    "id": "unidad-iglesia-junio-2026",
+    "titulo": "Unidad en la Iglesia",
+    "descripcion": "Un culto especial de unidad junto a nuestras iglesias hermanas. Nos acompañan como invitadas la Iglesia Calvary Vida y la Iglesia Santiago Mahanaim.",
+    "gancho": "Un solo cuerpo, un solo Señor. Celebremos juntos la unidad en Cristo.",
     "fecha": "2026-06-28",
-    "hora": "16:00",
+    "hora": "10:30",
     "lugar": "CALVARY SANTIAGO, Av. Brasil 522",
-    "categoria": "conferencia",
-    "destacado": false
+    "categoria": "especial",
+    "destacado": true
   }
 ]

@@ -1,7 +1,7 @@
 # Iglesia SHEMA — Sitio Web Institucional
 
-Sitio web informativo de la **Iglesia SHEMA**, Santiago, Chile.
-Construido con Next.js 15, TypeScript y Tailwind CSS v4, con arquitectura orientada a producción.
+Sitio web informativo de **Calvary Santiago**, Santiago, Chile.
+Construido con Next.js 16, TypeScript y Tailwind CSS v4, con arquitectura orientada a producción.
 
 ---
 
@@ -9,9 +9,9 @@ Construido con Next.js 15, TypeScript y Tailwind CSS v4, con arquitectura orient
 
 | Tecnología | Versión | Rol |
 |---|---|---|
-| Next.js | 15.x | Framework full-stack (App Router + SSG) |
+| Next.js | 16.x | Framework full-stack (App Router + SSG / export estático) |
 | React | 19.x | Librería de UI |
-| TypeScript | 5.x | Tipado estático estricto |
+| TypeScript | 6.x | Tipado estático estricto |
 | Tailwind CSS | 4.x | Estilos con variables CSS personalizadas |
 | Zod | 3.x | Validación de esquemas (cliente y servidor) |
 | React Hook Form | 7.x | Formularios con validación |
@@ -100,7 +100,9 @@ TURNSTILE_SECRET_KEY=
 ```
 shemaweb/
 ├── public/
-│   └── contenido/png/          # Imágenes estáticas (logo, fotos)
+│   └── contenido/              # Imágenes estáticas
+│       ├── Diseño/             # Logos, hero, fondos
+│       └── Dia de la Madre 2026/  # Fotos de la galería
 ├── src/
 │   ├── app/                    # App Router de Next.js
 │   │   ├── layout.tsx          # Layout raíz: fuentes, BarraNavegacion, PieDePagina
@@ -113,11 +115,8 @@ shemaweb/
 │   │   ├── horarios/           # /horarios
 │   │   ├── galeria/            # /galeria
 │   │   ├── contacto/           # /contacto
-│   │   ├── privacidad/         # /privacidad  (noindex)
-│   │   ├── terminos/           # /terminos    (noindex)
 │   │   └── api/
-│   │       ├── contacto/       # POST /api/contacto
-│   │       └── eventos/        # GET  /api/eventos
+│   │       └── contacto/       # POST /api/contacto (solo destino Hostinger)
 │   ├── componentes/
 │   │   ├── diseno/
 │   │   │   ├── BarraNavegacion.tsx   # Navbar responsiva con menú móvil
@@ -147,8 +146,7 @@ shemaweb/
 │           ├── utilidades.ts   # cn(), formatearFecha, formatearHora, truncarTexto
 │           └── validaciones.ts # Esquema Zod del formulario de contacto
 ├── middleware.ts               # Rate limiting: 20 req/min por IP en /api/*
-├── next.config.ts              # Headers de seguridad, formatos de imagen
-├── tailwind.config.ts          # Configuración Tailwind (si aplica)
+├── next.config.ts              # Destino de build, headers de seguridad, imágenes
 ├── tsconfig.json               # TypeScript strict mode, alias @/*
 ├── .env.example                # Plantilla de variables de entorno
 └── .gitignore
@@ -210,33 +208,19 @@ Recibe los datos del formulario de contacto.
 ```
 
 > El envío de email (Resend) está pendiente de integración. Actualmente valida y responde con éxito.
-
----
-
-### `GET /api/eventos`
-Devuelve la lista de eventos desde `eventos.json`.
-
-**Query params:**
-- `?proximos=true` — filtra solo eventos desde la fecha actual
-
-**Respuesta:**
-```json
-{ "exito": true, "datos": [ /* Evento[] */ ] }
-```
-
-Cache: `3600s` + `stale-while-revalidate: 86400s`
+>
+> ⚠️ **Importante:** las API routes y el middleware solo funcionan en el destino **Hostinger** (servidor Node.js, `npm run build:hostinger`). En el export estático para **GitHub Pages** quedan deshabilitados, por lo que el formulario de contacto no tiene backend en ese despliegue. Ver sección _Despliegue_.
 
 ---
 
 ## Seguridad
 
-- **Rate limiting** en `/api/*`: 20 solicitudes por minuto por IP (`middleware.ts`)
-- **Headers HTTP** configurados en `next.config.ts`:
-  - `Content-Security-Policy` estricto
-  - `Strict-Transport-Security` (HSTS, 2 años)
-  - `X-Frame-Options: SAMEORIGIN`
+- **Rate limiting** en `/api/*`: 20 solicitudes por minuto por IP (`middleware.ts`) — solo en destino Hostinger
+- **Headers HTTP** configurados en `next.config.ts` (solo en destino Hostinger):
+  - `X-Frame-Options: DENY`
   - `X-Content-Type-Options: nosniff`
   - `Referrer-Policy: strict-origin-when-cross-origin`
+  - `Permissions-Policy: camera=(), microphone=(), geolocation=()`
 - **Honeypot anti-spam** en el formulario de contacto
 - **Validación Zod** en cliente y servidor
 
@@ -244,7 +228,23 @@ Cache: `3600s` + `stale-while-revalidate: 86400s`
 
 ## Despliegue
 
-### Vercel (recomendado)
+El proyecto soporta **dos destinos** mediante la variable `DEPLOY_TARGET` (ver `next.config.ts`):
+
+| Destino | Comando | Salida | API / middleware |
+|---|---|---|---|
+| **GitHub Pages** (export estático) | `npm run build` | `out/` | ❌ deshabilitados |
+| **Hostinger** (servidor Node.js) | `npm run build:hostinger` | `.next/` | ✅ activos |
+
+### GitHub Pages (despliegue actual — automático)
+
+El workflow `.github/workflows/deploy.yml` construye y publica en cada push a `main`.
+Usa `NEXT_PUBLIC_BASE_PATH=/shemaweb` (el nombre del repositorio) para resolver las rutas.
+Si cambias el nombre del repositorio, actualiza esa variable en el workflow.
+
+> Al ser export estático, el formulario de contacto necesita un backend externo
+> (p. ej. Formspree, Web3Forms) o migrar a Hostinger para enviar correos.
+
+### Vercel
 
 ```bash
 # Instalar CLI de Vercel

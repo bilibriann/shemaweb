@@ -166,6 +166,28 @@
     border-color: rgba(0, 95, 115, 0.25);
   }
 
+  /* ─── Evento destacado al llegar por enlace (#evento-id) ─── */
+  .evento-destino:target {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 4px;
+    animation: pulsoDestino 1.6s ease-out 1;
+  }
+
+  @keyframes pulsoDestino {
+    0% {
+      box-shadow: 0 0 0 0 rgba(214, 137, 0, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 0 18px rgba(214, 137, 0, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .evento-destino:target {
+      animation: none;
+    }
+  }
+
   /* ─── Hover en filas/items ─── */
   .item-interactivo {
     transition: background-color 0.15s ease, transform 0.15s ease;
@@ -429,10 +451,3 @@
       animation: none !important;
     }
   }
-
-/* Footer transparente — solo en página horarios (fuera del layer para mayor prioridad) */
-.footer-transparente footer[aria-label="Pie de página"] {
-  background-color: rgba(0, 0, 0, 0.55) !important;
-  backdrop-filter: blur(24px) !important;
-  -webkit-backdrop-filter: blur(24px) !important;
-}

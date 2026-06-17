@@ -8,12 +8,14 @@
     "build": "next build",
     "build:hostinger": "cross-env DEPLOY_TARGET=hostinger next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "type-check": "tsc --noEmit",
     "start:dev": "next build && next start --port 3000",
-    "comprimir": "node scripts/comprimir-imagenes.mjs"
+    "comprimir": "node scripts/comprimir-imagenes.mjs",
+    "desplegar": "next build && node --env-file=.env.local scripts/desplegar-ftp.mjs",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -34,8 +36,9 @@
     "@types/node": "^25.9.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
+    "basic-ftp": "^6.0.1",
     "cross-env": "^10.1.0",
-    "eslint": "^10.4.1",
+    "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.7",
     "husky": "^9.1.7",
     "lint-staged": "^15.3.0",

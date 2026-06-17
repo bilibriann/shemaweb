@@ -5,7 +5,7 @@ import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import { img } from '@/lib/utilidades/rutas';
 
 // Foto de muestra del álbum "Día de la Madre" — representa la galería en el inicio.
-const FOTO_MUESTRA = img('/contenido/Dia de la Madre 2026/DSC06099.JPG');
+const FOTO_MUESTRA = img('/contenido/Dia de la Madre 2026/DSC06138.JPG');
 
 export function SeccionGaleriaPrevia() {
   return (

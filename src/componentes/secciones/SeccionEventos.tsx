@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { ContenedorSeccion, EncabezadoSeccion } from '@/componentes/ui/ContenedorSeccion';
-import { CalendarioEventos } from '@/componentes/secciones/CalendarioEventos';
+import { CalendarioEventos } from '@/componentes/eventos/CalendarioEventos';
 import { AnimarAlVer } from '@/componentes/ui/AnimarAlVer';
 import type { Evento } from '@/lib/tipos/type';
 

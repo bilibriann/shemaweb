@@ -14,8 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { ruta: '/eventos', prioridad: 0.8, frecuencia: 'weekly' as const },
     { ruta: '/galeria', prioridad: 0.7, frecuencia: 'monthly' as const },
     { ruta: '/contacto', prioridad: 0.8, frecuencia: 'monthly' as const },
-    { ruta: '/privacidad', prioridad: 0.3, frecuencia: 'yearly' as const },
-    { ruta: '/terminos', prioridad: 0.3, frecuencia: 'yearly' as const },
   ];
 
   return rutas.map(({ ruta, prioridad, frecuencia }) => ({
